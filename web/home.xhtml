@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://openfaces.org/" xmlns:ui="http://java.sun.com/jsf/core"
+>
+<h:head>
+    <h:outputStylesheet library="css" name="table-style.css"  />
+    <style type="text/css">
+        html {
+            background-color: rgba(241, 186, 196, 0.76);
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:commandLink value="admin mode" action="login"/><p> </p>
+        Go through <h:commandLink value="registration" action="reg"/> for buying tickets.
+        Already have an account? <h:commandLink value="Log in" action="loginAsUser"/> now!
+        <center>
+            <h1>Select city and press ok</h1>
+            <h:selectOneMenu  value="#{city.pickedCity}">
+                <f:selectItem itemValue="#{null}" itemLabel="----- select city -----"/>
+                <f:selectItems  id="city1" value="#{city.getCityList()}"/>
+            </h:selectOneMenu>
+            <div class="form-actions">
+                <h:commandButton value="ok"/>
+            </div>
+            <h:message for="city1"/>
+            <h1>Select cinema and press ok</h1>
+            <h:selectOneMenu value="#{teatr.pickedTeatr}">
+                <f:selectItem itemValue="#{null}" itemLabel="-- select kinoteatr --"/>
+                <f:selectItems id="teatr1" value="#{teatr.getTeatrList(city.checkID(city.pickedCity))}"/>
+            </h:selectOneMenu>
+            <div class="form-actions">
+                <h:commandButton value="ok" action="#{seance.getFIDs(teatr.checkID(teatr.pickedTeatr))}"/>
+            </div>
+            <h:message for="teatr1"/>
+        </center>
+
+    </h:form>
+<center>
+    <h:dataTable value="#{film.getFilmList(seance.f_ids,teatr.checkID(teatr.pickedTeatr))}" var="f"
+                 styleClass="order-table"
+                 headerClass="order-table-header"
+                 rowClasses="order-table-odd-row,order-table-even-row"
+    >
+
+
+        <h:column>
+            <f:facet name="header">
+                Name
+            </f:facet>
+            #{f.name}
+        </h:column>
+
+
+        <h:column>
+            <f:facet name="header">
+                Length
+            </f:facet>
+            #{f.length}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                Country
+            </f:facet>
+            #{f.country}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                Year
+            </f:facet>
+            #{f.year}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                Genre
+            </f:facet>
+            #{f.genre}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                Reiting
+            </f:facet>
+            #{f.reiting}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                Free spots
+            </f:facet>
+            #{f.freeSpots}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                Price
+            </f:facet>
+            #{f.price}
+        </h:column>
+
+
+    </h:dataTable>
+</center>
+</h:body>
+</html>

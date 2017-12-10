@@ -1,0 +1,26 @@
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>logIn</title>
+    <style type="text/css">
+        html {
+            background-color: rgba(241, 186, 196, 0.76);
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <center>
+        <b>#{user.message}</b> <br/><br/>
+        <h:form id="loginForm">
+            <h:outputLabel value="User Name:" />
+            <h:inputText value="#{user.name}" /> <br />
+            <h:outputLabel value="Password:" />
+            <h:inputSecret value="#{user.password}"></h:inputSecret><br/>
+            <h:commandButton value="Submit" action="#{user.login}"></h:commandButton>
+        </h:form>
+    </center>
+
+</h:body>
+</html>

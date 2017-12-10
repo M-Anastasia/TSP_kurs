@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core"
+>
+<h:head>
+    <title>Edit User</title>
+    <style type="text/css">
+        html {
+            background-color: rgba(241, 186, 196, 0.76);
+        }
+    </style>
+</h:head>
+<h:body>
+    <center>
+        <fcore:view>
+            <h:form>
+                <h1>Edit</h1>
+                <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="3">
+                    <h:outputLabel value="Id" />
+                    <h:inputText value="#{user.u_id}" required="true" requiredMessage="Id is Required" id="Eid">
+                    </h:inputText> <h:message for="Eid"/>
+
+                    <h:outputLabel value="Name" />
+                    <h:inputText value="#{user.name}" required="true" requiredMessage="Name is Required" id="Ename">
+
+                    </h:inputText> <h:message for="Ename"/>
+                    <h:outputLabel value="Password" />
+                    <h:inputText value="#{user.password}" required="true" requiredMessage="Password is Required" id="Epassword">
+
+                    </h:inputText><h:message for="Epassword"/>
+                    <h:commandLink value="Update" action="success" actionListener="#{user.update()}">
+                        <fcore:param name="id" value="#{user.u_id}"/>
+                    </h:commandLink>
+                </h:panelGrid>
+            </h:form>
+        </fcore:view>
+    </center>
+</h:body>
+</html>
+

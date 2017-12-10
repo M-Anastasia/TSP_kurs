@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+<head>
+    <style type="text/css">
+        html {
+            background-color: rgba(241, 186, 196, 0.76);
+        }
+    </style>
+</head>
+<h:body>
+    <center>
+        <fcore:view>
+            <h:form>
+                <h:dataTable var="listF" value="#{film.getAllFilmList()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:column>
+                        <fcore:facet name="header">Film ID</fcore:facet>
+                        <h:outputText value="#{listF.f_id}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Name</fcore:facet>
+                        <h:outputText value="#{listF.name}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Length</fcore:facet>
+                        <h:outputText value="#{listF.length}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Country</fcore:facet>
+                        <h:outputText value="#{listF.country}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Year</fcore:facet>
+                        <h:outputText value="#{listF.year}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Genre</fcore:facet>
+                        <h:outputText value="#{listF.genre}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Reiting</fcore:facet>
+                        <h:outputText value="#{listF.reiting}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Edit</fcore:facet>
+                        <h:commandLink action="editFilm" actionListener="#{film.edit()}" value="Edit">
+                            <fcore:param name="id" value="#{listF.f_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Delete</fcore:facet>
+                        <h:commandLink action="success"  actionListener="#{film.delete()}" value="Delete" onclick="return confirm('Are You Sure ?')">
+                            <fcore:param name="id" value="#{listF.f_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+                <h:commandLink value="AddFilm"  action="addFilm" />
+            </h:form>
+        </fcore:view>
+    </center>
+
+    <!--<h:commandButton value="Save" action="home"/>-->
+
+    <center>
+        <fcore:view>
+            <h:form>
+                <h:dataTable var="listC" value="#{city.getAllCityList()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:column>
+                        <fcore:facet name="header">City ID</fcore:facet>
+                        <h:outputText value="#{listC.c_id}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Name</fcore:facet>
+                        <h:outputText value="#{listC.name}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Edit</fcore:facet>
+                        <h:commandLink action="editCity" actionListener="#{city.edit()}" value="Edit">
+                            <fcore:param name="id" value="#{listC.c_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Delete</fcore:facet>
+                        <h:commandLink action="success"  actionListener="#{city.delete()}" value="Delete" onclick="return confirm('Are You Sure ?')">
+                            <fcore:param name="id" value="#{listC.c_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+                <h:commandLink value="AddCity"  action="addCity" />
+            </h:form>
+        </fcore:view>
+    </center>
+
+    <center>
+        <fcore:view>
+            <h:form>
+                <h:dataTable var="listT" value="#{teatr.getAllTeatrList()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:column>
+                        <fcore:facet name="header">Teart ID</fcore:facet>
+                        <h:outputText value="#{listT.t_id}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">City ID</fcore:facet>
+                        <h:outputText value="#{listT.c_id}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Name</fcore:facet>
+                        <h:outputText value="#{listT.name}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Edit</fcore:facet>
+                        <h:commandLink action="editTeatr" actionListener="#{teatr.edit()}" value="Edit">
+                            <fcore:param name="id" value="#{listT.t_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Delete</fcore:facet>
+                        <h:commandLink action="success"  actionListener="#{teatr.delete()}" value="Delete" onclick="return confirm('Are You Sure ?')">
+                            <fcore:param name="id" value="#{listT.t_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+                <h:commandLink value="AddTeatr"  action="addTeatr" />
+            </h:form>
+        </fcore:view>
+    </center>
+
+    <center>
+        <fcore:view>
+            <h:form>
+                <h:dataTable var="listS" value="#{seance.getAllSeanceList()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:column>
+                        <fcore:facet name="header">Seance Id</fcore:facet>
+                        <h:outputText value="#{listS.s_id}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Film NAME</fcore:facet>
+                        <h:outputText value="#{listS.f_name}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">FreeSpots</fcore:facet>
+                        <h:outputText value="#{listS.freeSpots}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Price</fcore:facet>
+                        <h:outputText value="#{listS.price}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Edit</fcore:facet>
+                        <h:commandLink action="editSeance" actionListener="#{seance.edit()}" value="Edit">
+                            <fcore:param name="id" value="#{listS.s_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Delete</fcore:facet>
+                        <h:commandLink action="success"  actionListener="#{seance.delete()}" value="Delete" onclick="return confirm('Are You Sure ?')">
+                            <fcore:param name="id" value="#{listS.s_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+                <h:commandLink value="AddSeanse"  action="addSeance" />
+            </h:form>
+        </fcore:view>
+    </center>
+
+    <center>
+        <fcore:view>
+            <h:form>
+                <h:dataTable var="listU" value="#{user.getAllUser()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:column>
+                        <fcore:facet name="header">Id</fcore:facet>
+                        <h:outputText value="#{listU.u_id}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Name</fcore:facet>
+                        <h:outputText value="#{listU.name}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Password</fcore:facet>
+                        <h:outputText value="#{listU.password}"/>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Edit</fcore:facet>
+                        <h:commandLink action="editUser" actionListener="#{user.edit()}" value="Edit">
+                            <fcore:param name="id" value="#{listU.u_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <fcore:facet name="header">Delete</fcore:facet>
+                        <h:commandLink action="success"  actionListener="#{user.delete()}" value="Delete" onclick="return confirm('Are You Sure ?')">
+                            <fcore:param name="id" value="#{listU.u_id}"/>
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+                <h:commandLink value="AddUser"  action="addUser" />
+                <p></p>
+                <h:commandLink value="Purchses"  action="purchases" />
+            </h:form>
+        </fcore:view>
+    </center>
+
+</h:body>
+</html>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="omnifaces-2.5.1-javadoc">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/omnifaces-2.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/omnifaces-2.5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

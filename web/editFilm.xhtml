@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core"
+>
+<h:head>
+    <title>Edit Film</title>
+    <style type="text/css">
+        html {
+            background-color: rgba(241, 186, 196, 0.76);
+        }
+    </style>
+</h:head>
+<h:body>
+    <center>
+        <fcore:view>
+            <h:form>
+                <h1>Edit</h1>
+                <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="3">
+                    <h:outputLabel value="ID"/>
+                    <h:inputText value="#{film.f_id}" required="true" requiredMessage="ID is Required" id="Eid">
+
+                    </h:inputText> <h:message for="Eid"/>
+                    <h:outputLabel value="Name" />
+                    <h:inputText value="#{film.name}" required="true" requiredMessage="Name is Required" id="Ename">
+
+                    </h:inputText> <h:message for="Ename"/>
+                    <h:outputLabel value="Length" />
+                    <h:inputText value="#{film.length}" required="true" requiredMessage="Length is Required" id="Elength">
+
+                    </h:inputText><h:message for="Elength"/>
+                    <h:outputLabel value="Country"/>
+                    <h:inputText value="#{film.country}" required="true" requiredMessage="Country is Required" id="Ecountry">
+
+                    </h:inputText> <h:message for="Ecountry"/>
+                    <h:outputLabel value="Year" />
+                    <h:inputText value="#{film.year}" required="true" requiredMessage="Year is Required" id="Eyear">
+
+                    </h:inputText> <h:message for="Eyear"/>
+                    <h:outputLabel value="Genre" />
+                    <h:inputText value="#{film.genre}" required="true" requiredMessage="Genre is Required" id="Egenre">
+
+                    </h:inputText><h:message for="Egenre"/>
+                    <h:outputLabel value="Reiting"/>
+                    <h:inputText value="#{film.reiting}" required="true" requiredMessage="Reiting is Required" id="Ereiting">
+
+                    </h:inputText> <h:message for="Ereiting"/>
+                    <h:commandLink value="Update" action="success" actionListener="#{film.update()}">
+                        <fcore:param name="id" value="#{film.f_id}"/>
+                    </h:commandLink>
+                </h:panelGrid>
+            </h:form>
+        </fcore:view>
+    </center>
+</h:body>
+</html>
+

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core"
+>
+<h:head>
+    <title>Add Seance</title>
+    <style type="text/css">
+        html {
+            background-color: rgba(241, 186, 196, 0.76);
+        }
+    </style>
+</h:head>
+<h:body>
+    <center>
+        <fcore:view>
+            <h:form>
+                <h1>Add</h1>
+                <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="3">
+                    <h:outputLabel value="ID"/>
+                    <h:inputText value="#{seance.s_id}" required="true" requiredMessage="ID is Required" id="Eid">
+
+                    </h:inputText> <h:message for="Eid"/>
+                    <h:outputLabel value="fid" />
+                    <h:inputText value="#{seance.f_id}" required="true" requiredMessage="FID is Required" id="Efid">
+
+                    </h:inputText> <h:message for="Efid"/>
+                    <h:outputLabel value="tid" />
+                    <h:inputText value="#{seance.t_id}" required="true" requiredMessage="TID is Required" id="Etid">
+
+                    </h:inputText> <h:message for="Etid"/>
+                    <h:outputLabel value="Freespots" />
+                    <h:inputText value="#{seance.freeSpots}" required="true" requiredMessage="Freespots is Required" id="Efreespots">
+
+                    </h:inputText><h:message for="Efreespots"/>
+                    <h:outputLabel value="Price" />
+                    <h:inputText value="#{seance.price}" required="true" requiredMessage="Price is Required" id="Eprice">
+
+                    </h:inputText><h:message for="Eprice"/>
+
+                    <h:commandLink value="SaveAdd" action="success" actionListener="#{seance.add()}" onclick="return confirm('Are you sure?')"/>
+                </h:panelGrid>
+            </h:form>
+        </fcore:view>
+    </center>
+</h:body>
+</html>
+

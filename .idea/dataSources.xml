@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3594637056">
+    <data-source source="LOCAL" name="Sqlite (Xerial) - tspDB.db" uuid="c441fdfd-5392-4740-9040-3ae3e566674d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/tspDB.db</jdbc-url>
+    </data-source>
+  </component>
+</project>

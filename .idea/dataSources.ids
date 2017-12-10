@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Sqlite (Xerial) - tspDB.db" uuid="c441fdfd-5392-4740-9040-3ae3e566674d">
+    <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="CITY" schema="" catalog="" type="TABLE">
+      <column name="CID" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="cid"/>
+    </table>
+    <table name="FILM" schema="" catalog="" type="TABLE">
+      <column name="FID" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="LENGTH" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="COUNTRY" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="YEAR" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="GENRE" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="REITING" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="fid"/>
+    </table>
+    <table name="PURCHASE" schema="" catalog="" type="TABLE">
+      <column name="PID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="PRICE" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="SEANCE" schema="" catalog="" type="TABLE">
+      <column name="SID" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="FID" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="TID" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="FREESPOTS" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="PRICE" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="sid"/>
+    </table>
+    <table name="TEATR" schema="" catalog="" type="TABLE">
+      <column name="TID" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="CID" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="tid"/>
+    </table>
+    <table name="USERS" schema="" catalog="" type="TABLE">
+      <column name="UID" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="PASWORD" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="uid"/>
+    </table>
+  </data-source>
+</component>
